@@ -31,6 +31,8 @@ A spyware developed to hack IOT device(webcam) and hardware device(keyboard) and
 - `gunicorn` - for implimenting WSGI ( Web Server Gateway Interface ).
 - `nginx` - for webserver acting as a reverse proxy to AWS.
 ## Contributors
+* [Abhishek Sharma](https://github.com/anonymous300502)
+
 * [Manaswi Sharma](https://github.com/manaswii)
 
 <br>
