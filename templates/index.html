@@ -1,0 +1,80 @@
+<html>
+    <head>
+        <title>index</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <style>
+            body {
+                background-image: url('https://images.unsplash.com/photo-1582266255765-fa5cf1a1d501?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YW5vbnltb3VzfGVufDB8fDB8fA%3D%3D&w=1000&q=80');
+                background-size: cover;
+                color: #f2f2f2;
+                padding: 20px;
+            }
+            table {
+                width: 100%;
+                margin-top: 20px;
+                border-collapse: collapse;
+            }
+            td {
+                padding: 10px;
+                border: 1px solid #6c757d;
+            }
+            a {
+                color: #f2f2f2;
+                text-decoration: none;
+            }
+            a:hover {
+                color: #e6e6e6;
+            }
+            .navbar {
+                background-color: #000000;
+                color: #f2f2f2;
+            }
+            .navbar-brand {
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <a class="navbar-brand" href="#">HERE ARE YOUR HACKED COMPUTERS</a>
+            </nav>
+            <form action="/index/log" method="POST" id="form1">
+                <input type="text" id="macid" name="mac" hidden>
+            </form>
+            <div class="table-responsive">
+                <table class="table table-bordered table-dark">
+                    <thead>
+                        <tr>
+                            <th>Serial No.</th>
+                            <th>Name</th>
+                            <th>MAC Address</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for small_data in data %}
+                        <tr>
+                            <td>{{ loop.index }}</td>
+                            <td>
+                                <a href="#" onclick="submitForm(this)" id="{{ small_data[1] }}">{{ small_data[0] }}</a>
+                            </td>
+                            <td>{{ small_data[1] }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <script>
+            function submitForm(clickedElement) {
+                console.log(clickedElement.id);
+                document.querySelector("#macid").value = clickedElement.id;
+                document.querySelector("#form1").submit();
+            }
+            document.addEventListener('DOMContentLoaded', function () {
+
+            })
+        </script>
+    </body>
+</html>
