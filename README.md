@@ -30,6 +30,8 @@ A spyware developed to hack IOT device(webcam) and hardware device(keyboard) and
 - `flask` - for Webapp and REST API developement.
 - `gunicorn` - for implimenting WSGI ( Web Server Gateway Interface ).
 - `nginx` - for webserver acting as a reverse proxy to AWS.
+
+  FOR CREATING THE VIRUS EXE, EDIT THE VIRUS CODE AND CREATE AN EXE USING PYINSTALLER 
 ## Contributors
 * [Abhishek Sharma](https://github.com/anonymous300502)
 
