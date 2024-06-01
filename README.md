@@ -17,12 +17,12 @@ A spyware developed to hack hardware device(keyboard) and send it's data to the 
 - [ ] An Extensive admin panel on the webapp with login functionalities and route secrutiy to view keylogs. 
 - [ ] A database to store keylogs along with username and timestamp. 
 
-## USAGE:
-1.) Make a server online using AWS make necessary changes to allow inbound connections.<br>
+## Usage
+1.) Make a server online using AWS make necessary changes to allow inbound connections on port 8000 or the port of your choice.<br>
 <br>
-2.) In line 27 of the `stage2_keylogger.py` edit the url to match with your server ip and port and store it on your online server.<br>
-<br>
-3.) In line 56 of `app.py` provide the path to your `stage2_keylogger.py` stored on your server and in line 106 of `app.py` add your username and password for route security<br>
+2.) In line 27 of the `stage2_keylogger.py` edit the url to match with your server ip and port. Obfuscate the stage2_keylogger.py file using the [FudCrypt](https://github.com/machine1337/fudcrypt) project. Then, serve it as a directly downloadable file on the flask app in the `/dwfile` route, you can do this by editing line 56 of `app.py` and providing the path to your edited and obfuscated `stage2_keylogger.py` stored on your AWS server.
+<br><br>
+3.) In line 106 of `app.py` add your username and password for route security<br>
 <br>
 4.) Create a sqlite3 database `dope.db` of the following schema - <br>
 `sqlite> .schema`<br>
@@ -32,7 +32,18 @@ A spyware developed to hack hardware device(keyboard) and send it's data to the 
 <br>
 5.) Add an admin user to login into the admin plan `INSERT INTO admin_users(username, hash) VALUES ('your_username_here','your_complete_password_hash_generated_using_werkzeug.security_library')` <br>
 <br>
-6.) HOST the flask app on your online server for it to be accessible over the internet.<br>
+6.) HOST the flask app on your AWS server for it to be accessible over the internet.<br>
+<br> 
+#### NOW YOUR SERVER AND PAYLOAD ARE READY!
+#### Now we have to prepare the `stage1_payload` and deliver it to the target pc.
+1.) In line 16 of the `stage1_payload.py` edit the url to match with your flask route `http://<ip>:<port>/dwfile`. The stage1 payload downloads the keylogger file using web requests and execute it in the memory without writing it on the disk.<br>
+<br>
+
+2.) Convert the `stage1_payload.py` in a standalone executable file using pyinstaller or any other tool of your choice. 
+<br.
+
+## Congratulations!! Your setup is done.
+Now all you have to do is transfer the .exe file into the victim pc, preferably store it in the `startup` folder so that it is automatically started everytime the pc boots.
 
 
 ## Built with
