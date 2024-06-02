@@ -18,7 +18,7 @@ A spyware developed to hack hardware device(keyboard) and send it's data to the 
 - [ ] A database to store keylogs along with username and timestamp. 
 
 ## Usage
-1.) Make a server online using AWS make necessary changes to allow inbound connections on port 8000 or the port of your choice.<br>
+1.) Make a server online using AWS or other onlie hosting service and make necessary changes to allow inbound connections on port 8000 or the port of your choice.<br>
 <br>
 The original payload isn't provided to prevent malicious use, email us on admin@hacktivists.in to gain access to the original payload along with instructions of setting it up for research purposes. <br> 
 2.) Edit line 56 of `app.py` and providing the path to your edited and obfuscated `stage2_keylogger.py` provided by us after storing on your AWS server.)
