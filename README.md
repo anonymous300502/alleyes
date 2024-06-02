@@ -53,7 +53,14 @@ Now all you have to do is transfer the .exe file into the victim pc, preferably 
 - `sqlite3` - for database.
 - `flask` - for Webapp and REST API developement.
 - `gunicorn` - for implimenting WSGI ( Web Server Gateway Interface ).
-  
+
+## Some Screenshots
+
+#### Log view for a specific victim
+<img src = "https://github.com/anonymous300502/alleyes/blob/main/sample_images/file1.png?raw=true">
+
+#### Ofcuscated malware
+<img src = "https://github.com/anonymous300502/alleyes/blob/main/sample_images/obfuscated_malware_sample.jpg?raw=true">
 
 ## Contributors
 * [Abhishek Sharma](https://github.com/anonymous300502)
